@@ -6,10 +6,12 @@
 #include <string>
 
 int main(){
-    std::string str;
-    std::cin >> str;
-    std::cout << str;
+    std::string name;
+    std::cout<<"Type your name: ";
+    std::cin >> name;
 
-    std::cout << std::endl << std::endl;
+    std::cout<<"Hi "<<name<<"!"<<std::endl;
+
+    
     return (0);
 }
