@@ -7,7 +7,42 @@
 
 enum class cow_purpose {dairy, meat, hide, pet};
 
-struct cow{
+class cow{
+    public:
+
+    //Getters and Setters
+    std::string get_name(){
+        return name;
+    }
+    void set_name(std::string name){
+        this->name = name;
+    }
+    int get_age(){
+        return age;
+    }
+    void set_age(int age) {
+        this->age = age;
+    }
+    cow_purpose get_purpose(){
+        return purpose;
+    }
+    void set_purpose(cow_purpose purpose){
+        this->purpose = purpose;
+    }
+    //Constructor
+    cow(){
+        this->name = "";
+        this->age = 0;
+        this->purpose=cow_purpose::hide;
+    }
+    cow(std::string name, int age, cow_purpose purpose){
+        this->name = name;
+        this->age = age;
+        this->purpose = purpose;
+    }
+
+
+    private:
     std::string name;
     int age;
     cow_purpose purpose;
@@ -15,11 +50,11 @@ struct cow{
 
 int main(){
     cow my_cow;
-    my_cow.age = 5;
-    my_cow.name = "Betsy";
-    my_cow.purpose = cow_purpose::dairy;
-    std::cout << my_cow.name << " is a type-" << (int)my_cow.purpose << " cow." << std::endl;
-    std::cout << my_cow.name << " is " << my_cow.age << " years old." << std::endl;
+    my_cow.set_age(5);
+    my_cow.set_name("Betsy");
+    my_cow.set_purpose(cow_purpose::dairy);
+    std::cout << my_cow.get_name() << " is a type-" << (int)my_cow.get_purpose() << " cow." << std::endl;
+    std::cout << my_cow.get_name() << " is " << my_cow.get_age() << " years old." << std::endl;
     
     std::cout << std::endl << std::endl;
     return (0);
